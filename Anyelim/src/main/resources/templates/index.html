@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>Saludos</div>
+        <p th:text="${Mensaje}"></p>
+        
+        <h1>Cliente desde una clase</h1>
+        <p>Nombre:<span th:text="${cliente.nombre}"></span></p>
+        <p>Apellidos:<span th:text="${cliente.apellidos}"></span></p>
+        <br>
+        <p>Correo:<span th:text="${cliente.correo}"></span></p>
+        <p>Telefono:<span th:text="${cliente.telefono}"></span></p>
+        
+        <br>
+        <h1>Clientes desde una lista</h1>
+        <table border="1">
+            <tr>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>Correo</th>
+                <th>Telefono</th>
+            </tr>
+            <tr th:each="item : ${clientes}">
+                <td th:text="${item.nombre}"></td>
+                <td th:text="${item.apellidos}"></td>
+                <td th:text="${item.correo}"></td>
+                <td th:text="${item.telefono}"></td>
+            </tr>
+        </table>
+
+        <h1>Clientes desde una lista de base de datos</h1>
+        <div th:if="${clientesDB != null and !clientesDB.empty}"></div>
+    </body>
+</html>
