@@ -31,8 +31,8 @@ public class IndexController {
         var clientes = Arrays.asList(cliente, cliente2);
         model.addAttribute("clientes",clientes);
         
-        var.clienteDB = clienteDao.findAll();
-        model.addAttribute("clientesDB", clientesDB);
+        //var.clienteDB = clienteDao.findAll();
+        //model.addAttribute("clientesDB", clientesDB);
         
         return "index";
     }
