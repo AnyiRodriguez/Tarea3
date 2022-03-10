@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <header th:fragment="header" class="head">
+            <h1>PLAYLIST CREATOR</h1>
+        </header>
+        <div th:fragment="bienvenida" class="bienvenida">
+            <p th:text="${MensajeBienvenida}"></p>
+        </div>
+        <aside thfragment="aside" class="aside">
+            <nav class="nav">
+                <a th:href="@{/miplaylist}" class="nav-link nav-hover">Mi playlist</a>
+                <br>
+                <br>
+                <br>
+                <a th:href="@{/modificar}" class="nav-link nav-hover">Crear playlist</a>
+                <br>
+                <br>
+                <br>
+                <a th:href="@{/miplaylist}" class="nav-link nav-hover">Modificar mi playlist</a>
+                <br>
+                <br>
+                <br>
+                <a th:href="@{/contactenos}" class="nav-link nav-hover">Contactenos</a>
+                <br>
+            </nav>  
+        </aside>
+        <section th:fragment="informacion" class="info">
+            <h2>¿Quienes Somos?</h2>
+            <p>Somos una pequeña empresa de musica que te da las herramientas necesarias para</p>
+            <p>que crees y organices tus playlists con tus canciones favoritas.</p>
+            <h2>Ubicacion:</h2>
+            <p>San Jose Costa Rica</p>
+            <h2>Tel:</h2>
+            <p>8888-7777</p>
+            <h2>Correo:</h2>
+            <p>playlistcreator@gmail.com</p>
+            <h2>Pongase en contacto con nosotros:</h2>
+        </section>
+    </body>
+</html>

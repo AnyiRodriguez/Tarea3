@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+    <head>
+        <title>Pagina para crear playlists</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link th:href="@{/css/Estilos.css}" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <header th:replace="layout/plantilla :: header"></header>
+        <aside th:replace="layout/plantilla :: aside"></aside>
+        <div id="agregar">
+            <a th:href="@{/crearPlaylist}">Agregar Canciones</a>
+        </div>
+        <section class="section">
+            <div th:if="${cancionesDB != null and !cancionesDB.empty}">
+                <table border="1">
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Autor</th>
+                        <th>Duracion</th>
+                        <th>Album</th>
+                        <th>Publicacion</th>
+                        <th>Modificar</th>
+                        <th>Eliminar</th>
+                    </tr>
+                    <tr th:each="item : ${cancionesDB}">
+                        <td th:text="${item.nombre}"></td>
+                        <td th:text="${item.autor}"></td>
+                        <td th:text="${item.duracion}"></td>
+                        <td th:text="${item.album}"></td>
+                        <td th:text="${item.fechapublicacion}"></td>
+                        <td><a th:href="@{/ModificarCancion/} + ${item.idcancion}">Modificar</a></td>
+                        <td><a th:href="@{/EliminarCancion/} + ${item.idcancion}">Eliminar</a></td>
+                </table>
+            </div>
+        </section>
+    </body>
+</html>
